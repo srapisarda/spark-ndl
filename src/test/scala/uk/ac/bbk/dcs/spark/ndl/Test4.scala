@@ -36,7 +36,7 @@ class Test4 extends FunSpec {
       val df_s = sparkSession.read.option("header", "true").schema(customSchema_2).csv("src/resources/data/20mb-s.csv")
       df_s.createOrReplaceTempView("S")
 
-      val P_7_9 = sparkSession.sql("( SELECT DISTINCT atom_0.att_0  AS att_0,atom_1.att_1  AS att_1   FROM R AS atom_0,R AS atom_1  WHERE atom_0.att_1 = atom_1.att_0)")
+      val P_7_9 = sparkSession.sql("( SELECT DISTINCT atom_0.att_0  AS att_0, atom_1.att_1  AS att_1   FROM R AS atom_0, R AS atom_1  WHERE atom_0.att_1 = atom_1.att_0)")
 
       P_7_9.createOrReplaceTempView("P_7_9")
 

@@ -13,3 +13,4 @@ libraryDependencies += "junit" % "junit" % "4.10" % "test"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4"
 
+libraryDependencies += "uk.ac.bbk" %% "spark-datalog" % "1.2.1"
