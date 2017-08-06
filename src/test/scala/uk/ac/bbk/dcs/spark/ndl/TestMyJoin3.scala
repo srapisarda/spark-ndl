@@ -1,9 +1,7 @@
 package uk.ac.bbk.dcs.spark.ndl
 
-
 import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.FunSpec
-
 
 /**
   * Created by rapissal on 03/08/2017.
@@ -133,7 +131,7 @@ class TestMyJoin3 extends FunSpec {
 
       val P_0_15 = myJoin(P_0_7, P_7_15).union(myJoin(myJoin(P_0_6, a.map(x => (x, x))), P_8_15))
 
-      P_0_15.distinct.count
+      assert ( P_0_15.distinct.count > 0 )
     }
   }
 }

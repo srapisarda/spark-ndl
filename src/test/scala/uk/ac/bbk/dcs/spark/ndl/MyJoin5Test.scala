@@ -1,7 +1,6 @@
 package uk.ac.bbk.dcs.spark.ndl
 
 
-import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.FunSpec
 
@@ -144,7 +143,7 @@ class MyJoin5Test extends FunSpec {
 
       val P_0_15 = myJoin(P_0_7, P_7_15).union(myJoin(myJoin(P_0_6, a), P_8_15))
 
-      P_0_15.distinct.count
+      assert( P_0_15.distinct.count >0 )
 
     }
   }
